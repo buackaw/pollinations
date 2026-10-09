@@ -73,7 +73,7 @@ jobs:
           fi
 
       - name: Publish to NPM
-        if: steps.check.outputs.skip != 'true'
+        if: steps.check.outputs.skip != 'false'
         working-directory: packages/sdk
         run: |
           v=$(node -p "require('./package.json').version")
